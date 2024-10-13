@@ -1,10 +1,16 @@
-import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
-import './index.css'
+import { BrowserRouter } from 'react-router-dom'
+import { CssBaseline, ThemeProvider } from '@mui/material'
+import { theme } from './components/config/muim-config.js'
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  <>
+  <BrowserRouter>
+  <ThemeProvider theme={theme}>
     <App />
-  </StrictMode>,
+    <CssBaseline />               
+  </ThemeProvider>
+  </BrowserRouter>
+  </>
 )
