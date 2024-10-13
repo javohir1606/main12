@@ -8,7 +8,7 @@ export const products = [
     size: "60x100",
     location: "Казахстан",
     raiting: 3,
-    price: "160.00",
+    price: "160.00 ",
     instalment: {
       price: "13.333",
       month: "12",

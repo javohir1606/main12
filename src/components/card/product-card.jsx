@@ -20,6 +20,11 @@ const NewCardBadge = styled.p`
   top: 0px;
   left: 0;
 `;
+const NueCand = styled.p`
+    background-color: ${theme.palette.primary.main};
+  color: #fff;
+  padding: 3px 20px;
+`
 
 export const ProductCard = ({
   new: newProduct,
@@ -59,6 +64,24 @@ export const ProductCard = ({
       </Typography>
       <Stack direction={"row"} alignItems={"center"} gap={"8px"}>
         <Rating value={raiting} precision={0.5} readOnly />
+      </Stack>
+      <Stack></Stack>
+      <Stack
+        direction={"row"}
+        gap={"62px"}
+        alignItems={"center"}
+        mt={"16px"}
+        mb={"8px"}
+      >
+        <Typography variant="body2">Цена</Typography>
+        <Typography variant="body2">В рассрочку</Typography>
+      </Stack>
+      <Stack mb={"21px"} mt={"10px"} direction={"row"} alignItems={"center"} justifyContent={"space-between"}>
+        <Typography variant="body1">{price}</Typography>
+        <Stack direction={"row"} alignItems={"center"} gap={"5px"}>
+          <NueCand> {instalment.price}</NueCand>
+          <Typography>x {instalment.month} Mec</Typography>
+        </Stack>
       </Stack>
     </CardWrapper>
   );

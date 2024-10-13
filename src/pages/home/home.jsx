@@ -21,6 +21,20 @@ export const Home = () => {
           </Grid2>
         </Container>
       </Box>
+      <Box pb={"100px"}>
+        <Container maxWidth="xs">
+          <Typography mb={"29px"} variant="h2">
+          Скидки
+          </Typography>
+          <Grid2 container spacing={"40px"}>
+            {products.map((item) => (
+              <Grid2 size={3} key={item.id}>
+                <ProductCard {...item} />
+              </Grid2>
+            ))}
+          </Grid2>
+        </Container>
+      </Box>
     </>
   );
 };
