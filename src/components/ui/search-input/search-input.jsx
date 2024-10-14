@@ -6,7 +6,7 @@ export const SearchInput = ({ onChange }) => {
   return (
     <SearchInputWrapper flexGrow={1}>
       <TextField
-      onChange={onChange}
+        onChange={onChange}
         slotProps={{
           input: {
             endAdornment: (
