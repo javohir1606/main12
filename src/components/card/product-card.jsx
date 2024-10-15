@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { useNavigate } from "react-router-dom"; // Import useNavigate for routing
+import { useNavigate } from "react-router-dom";
 import { theme } from "../config/muim-config";
 import { Box, IconButton, Rating, Stack, Typography } from "@mui/material";
 import { HeartIco } from "../../assets/icons/icon";
@@ -29,13 +29,12 @@ const NueCand = styled.p`
   padding: 3px 20px;
 `;
 
-// Styled Typography for the title with hover effect
 const TitleTypography = styled(Typography)`
   cursor: pointer;
-  transition: color 0.3s ease; // Smooth transition for color change
+  transition: color 0.3s ease; 
 
   &:hover {
-    color: ${theme.palette.primary.main}; // Change color on hover
+    color: ${theme.palette.primary.main};
   }
 `;
 
@@ -51,11 +50,10 @@ export const ProductCard = ({
   instalment,
 }) => {
   const [active, setActive] = React.useState(false);
-  const navigate = useNavigate(); // Hook for navigating
+  const navigate = useNavigate(); 
 
-  // Function to handle title click and navigate to details page
   const handleTitleClick = () => {
-    navigate(`/product/${id}`); // Navigate to product details page with the product id
+    navigate(`/product/${id}`); 
   };
 
   return (
@@ -69,12 +67,11 @@ export const ProductCard = ({
         <div>{newProduct && <NewCardBadge>Новинка</NewCardBadge>}</div>
         <IconButton onClick={() => setActive(!active)}>
           {active ? <HeartActiveIcon /> : <HeartIco />}
-        </IconButton>
+        </IconButton> 
       </Stack>
       <Box mb={"20px"} textAlign={"center"}>
         <img src={img} alt="img" />
       </Box>
-      {/* Use the styled TitleTypography for hover effect */}
       <TitleTypography
         mb={"8px"}
         fontWeight={500}
