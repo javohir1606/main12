@@ -1,6 +1,6 @@
 import React from "react";
 
-export const mobileSearchIcon = () => {
+export const MobileSearchIcon = () => {
   return (
     <svg
       width={15}

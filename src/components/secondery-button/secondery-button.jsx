@@ -1,7 +1,7 @@
 import { SecondaryButton as StyledSecondaryButton } from "./style";
-export const SecondaryButton = (children, onClick, type = "Button") => {
+export const SecondaryButton = (children, onClick, type = "Button", ...res) => {
   return (
-    <StyledSecondaryButton type={type} onClick={onClick}>
+    <StyledSecondaryButton {...res} type={type} onClick={onClick}>
       {children}
     </StyledSecondaryButton>
   );

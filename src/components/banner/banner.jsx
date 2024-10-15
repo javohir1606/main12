@@ -18,19 +18,28 @@ export const Banner = () => {
   return (
     <Box py={"97px"} bgcolor={theme.palette.primary.main}>
       <Container maxWidth={"xs"}>
-        <Stack direction={"row"} justifyContent={"space-between"}>
+        <Stack direction={{xs: "column", md:"row"}} justifyContent={"space-between"}>
           <Box>
             <Title>Новая коллекция ковров Venetta</Title>
-            <SecondaryButton>Смотреть все</SecondaryButton>
+            <SecondaryButton
+              sx={{ display: { xs: "none", md: "inline-block" } }}
+            >
+              Смотреть все
+            </SecondaryButton>
           </Box>
           <Stack gap={`40px`} direction={"row"}>
             <Box maxWidth={"303px"}>
               <img src={banner} alt="img" />
             </Box>
-            <Box maxWidth={"303px"}>
+            <Box maxWidth={"303px"} sx={{display:{xs: "none", md:"block"}}}>
               <img src={banner} alt="img" />
             </Box>
           </Stack>
+          <SecondaryButton
+              sx={{ display: { xs: "inline-block ", md: "none" } }}
+            >
+              Смотреть все
+            </SecondaryButton>
         </Stack>
       </Container>
     </Box>

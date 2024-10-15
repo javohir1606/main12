@@ -6,15 +6,15 @@ import { ProductCard } from "../../components/card/product-card";
 export const Home = () => {
   return (
     <>
-      {/* <Banner /> */}
-      {/* <Box pt={"100px"} pb={"100px"}>
+      <Banner />
+      <Box pt={"100px"} pb={"100px"}>
         <Container maxWidth="xs">
           <Typography mb={"29px"} variant="h2">
             Новинки
           </Typography>
           <Grid2 container spacing={"40px"}>
             {products.map((item) => (
-              <Grid2 size={3} key={item.id}>
+              <Grid2 size={{xs: 12, md: 6, lg: 3}} key={item.id}>
                 <ProductCard {...item} />
               </Grid2>
             ))}
@@ -28,13 +28,13 @@ export const Home = () => {
           </Typography>
           <Grid2 container spacing={"40px"}>
             {products.map((item) => (
-              <Grid2 size={3} key={item.id}>
+              <Grid2 size={{xs: 12, md: 6, lg: 3}} key={item.id}>
                 <ProductCard {...item} />
               </Grid2>
             ))}
           </Grid2>
         </Container>
-      </Box> */}
+      </Box>
     </>
   );
 };
