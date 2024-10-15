@@ -1,9 +1,11 @@
 import React from "react";
 import styled from "@emotion/styled";
+import { useNavigate } from "react-router-dom"; // Import useNavigate for routing
 import { theme } from "../config/muim-config";
 import { Box, IconButton, Rating, Stack, Typography } from "@mui/material";
 import { HeartIco } from "../../assets/icons/icon";
 import { HeartActiveIcon } from "../../assets/icons/like";
+
 const CardWrapper = styled.div`
   padding: 20px;
   border-radius: 10px;
@@ -20,10 +22,21 @@ const NewCardBadge = styled.p`
   top: 0px;
   left: 0;
 `;
+
 const NueCand = styled.p`
   background-color: ${theme.palette.primary.main};
   color: #fff;
   padding: 3px 20px;
+`;
+
+// Styled Typography for the title with hover effect
+const TitleTypography = styled(Typography)`
+  cursor: pointer;
+  transition: color 0.3s ease; // Smooth transition for color change
+
+  &:hover {
+    color: ${theme.palette.primary.main}; // Change color on hover
+  }
 `;
 
 export const ProductCard = ({
@@ -38,6 +51,13 @@ export const ProductCard = ({
   instalment,
 }) => {
   const [active, setActive] = React.useState(false);
+  const navigate = useNavigate(); // Hook for navigating
+
+  // Function to handle title click and navigate to details page
+  const handleTitleClick = () => {
+    navigate(`/product/${id}`); // Navigate to product details page with the product id
+  };
+
   return (
     <CardWrapper>
       <Stack
@@ -47,14 +67,22 @@ export const ProductCard = ({
         justifyContent={"space-between"}
       >
         <div>{newProduct && <NewCardBadge>Новинка</NewCardBadge>}</div>
-        <IconButton onClick={() => setActive(!active)}>{active ? <HeartActiveIcon /> : <HeartIco />}</IconButton>
+        <IconButton onClick={() => setActive(!active)}>
+          {active ? <HeartActiveIcon /> : <HeartIco />}
+        </IconButton>
       </Stack>
       <Box mb={"20px"} textAlign={"center"}>
         <img src={img} alt="img" />
       </Box>
-      <Typography mb={"8px"} fontWeight={500} variant="body1">
+      {/* Use the styled TitleTypography for hover effect */}
+      <TitleTypography
+        mb={"8px"}
+        fontWeight={500}
+        variant="body1"
+        onClick={handleTitleClick}
+      >
         {title}
-      </Typography>
+      </TitleTypography>
       <Typography mb={"8px"} variant="body2">
         Размер: {size}
       </Typography>
@@ -64,7 +92,6 @@ export const ProductCard = ({
       <Stack direction={"row"} alignItems={"center"} gap={"8px"}>
         <Rating value={raiting} precision={0.5} readOnly />
       </Stack>
-      <Stack></Stack>
       <Stack
         direction={"row"}
         gap={"62px"}
