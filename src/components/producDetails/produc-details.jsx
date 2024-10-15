@@ -4,8 +4,6 @@ import { Link, useParams } from "react-router-dom";
 import { products } from "../Data/product-data";
 import img from "../../assets/img/menu.png";
 import styled from "@emotion/styled";
-// import { theme } from "../config/muim-config";
-import ProductDetail from "../cardfayl/card";
 export const ProductDetails = () => {
   const { id } = useParams();
 
@@ -67,7 +65,6 @@ export const ProductDetails = () => {
             <img src={img} alt="img" />
           </Stack>
           <Stack>
-            <ProductDetail />
           </Stack>
           </Stack>
         </Container>

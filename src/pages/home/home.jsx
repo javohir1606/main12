@@ -6,8 +6,8 @@ import { ProductCard } from "../../components/card/product-card";
 export const Home = () => {
   return (
     <>
-      <Banner />
-      <Box pt={"100px"} pb={"100px"}>
+      {/* <Banner /> */}
+      {/* <Box pt={"100px"} pb={"100px"}>
         <Container maxWidth="xs">
           <Typography mb={"29px"} variant="h2">
             Новинки
@@ -34,7 +34,7 @@ export const Home = () => {
             ))}
           </Grid2>
         </Container>
-      </Box>
+      </Box> */}
     </>
   );
 };
