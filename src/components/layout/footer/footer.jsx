@@ -6,7 +6,7 @@ export const Footer = () => {
   return (
     <Box bgcolor={"#F2F2F2"}>
       <Container maxWidth="xs">
-        <Stack sx={{display:{xs:"column", md:"row"}}} py={"40px"}  gap={"64px"}>
+        <Stack direction={{xs:"column", md:"row"}} py={"40px"}  gap={"64px"}>
         <Stack>
           <Typography variant="body1" mb={"24px"}>Каталог товаров</Typography>
           <Typography mb={"16px"} color="grey">Ковры</Typography>
