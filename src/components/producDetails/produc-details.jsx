@@ -53,19 +53,17 @@ export const ProductDetails = () => {
           </Box>
           <hr />
           <Stack direction={"row"}>
-
-          <Stack
-            pt={"35px"}
-            pb={"35px"}
-            direction={"row"}
-            alignItems={"center"}
-            justifyContent={"space-between"}
-            mb={"8px"}
-          >
-            <img src={img} alt="img" />
-          </Stack>
-          <Stack>
-          </Stack>
+            <Stack
+              pt={"35px"}
+              pb={"35px"}
+              direction={"row"}
+              alignItems={"center"}
+              justifyContent={"space-between"}
+              mb={"8px"}
+            >
+              <img src={img} alt="img" />
+            </Stack>
+            <Stack></Stack>
           </Stack>
         </Container>
       </Box>
